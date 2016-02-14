@@ -1,0 +1,114 @@
+    codepad
+
+    Short URL
+    More Features
+    Chat 
+
+#include <iostream>
+
+using namespace std;
+
+​
+
+int count=0;
+
+void Merge(int arreglo[], int inicio, int mitad, int fin){
+
+    
+
+    int i, j, k, aux[(5*10^5)];
+
+    i = inicio, k = inicio, j = mitad + 1;
+
+    
+
+    while ((i<=mitad) && (j<=fin))
+
+    {
+
+        if (arreglo[i] < arreglo[j])
+
+        {
+
+            aux[k] = arreglo[i];
+
+            k++;
+
+            i++;
+
+        }
+
+        
+
+        else
+
+        {
+
+            aux[k] = arreglo[j];
+
+            k++;
+
+            j++;
+
+            count += mitad+1-i;
+
+        }
+
+    }
+
+​
+
+    while (i <= mitad)
+
+    {
+
+        aux[k] = arreglo[i];
+
+        k++;
+
+        i++;
+
+        
+
+    }
+
+    while (j <= fin)
+
+    {
+
+        aux[k] = arreglo[j];
+
+        k++;
+
+        j++;
+
+        
+
+    }
+
+    for (i = inicio; i < k; i++)
+
+    {
+
+        arreglo[i] = aux[i];
+
+    }
+
+}
+
+​
+
+void MergeSort(int arreglo[], int inicio, int fin)
+
+{
+
+    int mitad;
+
+    if (inicio < fin)
+
+    {
+
+        mitad = (inicio+fin)/2;
+
+Key Bindings:Tab Spaces:
+Code output will appear here when you Run the code.
